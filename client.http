@@ -1,0 +1,7 @@
+
+
+POST "http://localhost:3333/insert"
+{
+    "database": "vitor",
+    "clientId": 1
+}

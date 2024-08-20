@@ -1,0 +1,25 @@
+BANCO CENTRAL
+     - tabela cliente
+        - id
+        - nome
+        - database
+
+     - user
+       - id
+       - email
+       - verify
+
+     - user_client   
+        - user_id -> user
+        - client_id -> cliente
+                - 1 - 2
+                - 1 - 3
+                - 1 - 4
+
+BANCO cliente
+    - auth_usuario
+        - id
+        - user_id
+        - tipoAcesso 
+
+    
