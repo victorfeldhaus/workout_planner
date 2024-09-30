@@ -1,14 +1,20 @@
 {
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "jsonwebtoken": "^9.0.2",
-    "mysql-all-in-one": "^4.10.0"
+    "knex": "^3.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.3"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
     "@types/jsonwebtoken": "^9.0.6",
+    "@types/knex": "^0.15.2",
     "@types/node": "^22.2.0",
     "prisma": "^5.18.0",
     "ts-node": "^10.9.2",
@@ -19,8 +25,9 @@
   "description": "- Rota para criar exercicios - Rota para listar os exercicios - Rota para cadastrar os treinos - Rota para listar os treinos para fazer(A partir do dia atual)",
   "main": "index.js",
   "scripts": {
-    "dev": "npx ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create:database": "npx ts-node src/database/scripts/create_database.ts"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,10 @@
+version: '3.8'
+
 services:
   db:
-    image: mysql
+    image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
