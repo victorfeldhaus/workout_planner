@@ -1,5 +1,5 @@
 import { Application } from "express";
-import { loginController } from "../controllers/login_controller";
+import { loginController } from "../services/auth/controller/login_controller";
 import { register } from "./register";
 
 export const routes = (app: Application) => {
@@ -8,6 +8,7 @@ export const routes = (app: Application) => {
     });
 
 
+    login(app)
     app.get('/login', (req, res) => {
         res.render('login');
     });

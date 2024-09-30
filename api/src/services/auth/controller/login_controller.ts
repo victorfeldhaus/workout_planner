@@ -2,24 +2,22 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import session from  "express-session";
-import { getUser } from '../services/auth/model/get_user';
+import { getUser } from '../model/get_user';
 
-const JWT_SECRET = 'your_jwt_secret_key'; // Idealmente, isso deve ser armazenado em uma variável de ambiente
+const JWT_SECRET = 'your_jwt_secret_key';
 
 export const loginController = async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     const user = await getUser(email);
-    if (user.length === 0) {
-        // return res.status(401).json({ message: 'Invalid email or password' });
+    console.log(user);
+    if (user.length < 0) {
         return res.render('login', { error: 'Usuário ou senha incorretos.' });
 
     }
 
-    // Verifica se a senha está correta
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+    const isPasswordValid = await bcrypt.compare(password, user[0].password);
     if (!isPasswordValid) {
-        // return res.status(401).json({ message: 'Invalid email or password' });
         return res.render('login', { error: 'Usuário ou senha incorretos.' });
     }
 
@@ -31,5 +29,4 @@ export const loginController = async (req: Request, res: Response) => {
     // );
 
     return res.redirect('/dashboard');
- 
 };
