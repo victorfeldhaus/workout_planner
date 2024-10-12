@@ -1,4 +1,16 @@
 {
+  "name": "caliplanner",
+  "version": "1.0.0",
+  "description": "- Rota para criar exercicios - Rota para listar os exercicios - Rota para cadastrar os treinos - Rota para listar os treinos para fazer(A partir do dia atual)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create:database": "npx ts-node src/database/scripts/create_database.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "ejs": "^3.1.10",
@@ -19,17 +31,5 @@
     "prisma": "^5.18.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
-  },
-  "name": "caliplanner",
-  "version": "1.0.0",
-  "description": "- Rota para criar exercicios - Rota para listar os exercicios - Rota para cadastrar os treinos - Rota para listar os treinos para fazer(A partir do dia atual)",
-  "main": "index.js",
-  "scripts": {
-    "dev": "npx ts-node index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "create:database": "npx ts-node src/database/scripts/create_database.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

@@ -8,12 +8,12 @@ export const routes = (app: Application) => {
     });
 
 
-    login(app)
+    // login(app)
     app.get('/login', (req, res) => {
         res.render('login');
     });
 
-    // Rota para lidar com o login
+    // Rota para lidar com o loginx
     app.post('/login', loginController);
 
 
